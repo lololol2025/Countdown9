@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wabble News - Launching Soon</title>
-    <!-- Import Montserrat Font -->
+
+    <link rel="icon" href="/Wabble2.ico" sizes="any">
+<link rel="icon" href="/Wabble2.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/Wabble2.ico" type="image/x-icon">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/Wabble2.ico">
+<link rel="apple-touch-icon-precomposed" href="/Wabble2.ico">
+
+<meta name="theme-color" content="#050505">
+<meta name="msapplication-TileImage" content="/Wabble2.ico">
+<meta name="msapplication-TileColor" content="#050505">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+
     <link rel="icon" href="/Wabble2.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/Wabble2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/Wabble2.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/Wabble2.ico">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- RESET & VARIABLES --- */
         :root {
             --vip-bg: #050505;
             --container-bg: #0a0a0a;
@@ -43,7 +54,6 @@
             position: relative;
         }
 
-        /* --- BACKGROUND --- */
         .bg-noise {
             position: absolute;
             top: 0;
@@ -73,7 +83,6 @@
             100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.05); }
         }
 
-        /* --- MAIN CONTAINER --- */
         .container {
             position: relative;
             z-index: 10;
@@ -89,7 +98,6 @@
             -webkit-backdrop-filter: blur(15px);
         }
 
-        /* --- HEADER --- */
         .brand-title {
             font-weight: 900;
             font-size: 2rem;
@@ -110,7 +118,6 @@
             text-transform: uppercase;
         }
 
-        /* --- DATE & COUNTDOWN --- */
         .launch-date {
             font-weight: 900;
             font-size: 1.6rem;
@@ -138,7 +145,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .number {
             font-size: 2rem;
             font-weight: 700;
@@ -156,7 +163,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- SLOGAN --- */
         .slogan {
             font-size: 1.1rem;
             font-weight: 500;
@@ -168,7 +174,7 @@
             display: inline-block;
             text-shadow: 0px 0px 10px rgba(192, 192, 192, 0.2);
         }
-        
+
         .slogan::after {
             content: '';
             display: block;
@@ -180,7 +186,6 @@
             border-radius: 2px;
         }
 
-        /* --- ADVANCED BUTTONS --- */
         .social-grid {
             display: flex;
             justify-content: center;
@@ -202,11 +207,11 @@
             position: relative;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            color: #ffffff !important; 
+            color: #ffffff !important;
         }
 
-        /* Icons & SVG settings */
-        .social-btn i, .social-btn svg {
+        .social-btn i,
+        .social-btn svg {
             position: relative;
             z-index: 2;
             color: #ffffff !important;
@@ -214,7 +219,6 @@
             transition: transform 0.3s ease;
         }
 
-        /* Hover: Light Sweep Animation */
         .social-btn::before {
             content: '';
             position: absolute;
@@ -226,59 +230,60 @@
             transition: 0.5s;
             z-index: 1;
         }
-        
+
         .social-btn:hover::before {
             left: 100%;
         }
 
-        /* Hover: Global Lift */
         .social-btn:hover {
             transform: translateY(-6px) scale(1.1);
         }
-        
-        .social-btn:hover i, .social-btn:hover svg {
+
+        .social-btn:hover i,
+        .social-btn:hover svg {
             transform: scale(1.1);
         }
 
-        /* --- BRAND SPECIFIC STYLES --- */
-        
-        /* YOUTUBE */
         .social-btn.youtube:hover {
             border-color: #ff0000;
             box-shadow: 0 0 25px rgba(255, 0, 0, 0.6), inset 0 0 10px rgba(255,0,0,0.4);
             background: rgba(255, 0, 0, 0.1);
         }
-        .social-btn.youtube:hover i { text-shadow: 0 0 10px rgba(255,0,0,0.8); }
 
-        /* TELEGRAM */
+        .social-btn.youtube:hover i {
+            text-shadow: 0 0 10px rgba(255,0,0,0.8);
+        }
+
         .social-btn.telegram:hover {
             border-color: #0088cc;
             box-shadow: 0 0 25px rgba(0, 136, 204, 0.6), inset 0 0 10px rgba(0,136,204,0.4);
             background: rgba(0, 136, 204, 0.1);
         }
-        .social-btn.telegram:hover i { text-shadow: 0 0 10px rgba(0,136,204,0.8); }
 
-        /* INSTAGRAM - FIXED: Added Border + Gradient Background */
+        .social-btn.telegram:hover i {
+            text-shadow: 0 0 10px rgba(0,136,204,0.8);
+        }
+
         .social-btn.instagram:hover {
-            border-color: #E1306C; /* SOLID STROKE ADDED */
-            /* Gradient background tint */
+            border-color: #E1306C;
             background: linear-gradient(45deg, rgba(254, 218, 119, 0.1), rgba(221, 42, 123, 0.2), rgba(129, 52, 175, 0.2));
-            /* Pink/Purple Glow */
             box-shadow: 0 0 25px rgba(221, 42, 123, 0.6), inset 0 0 10px rgba(129, 52, 175, 0.4);
         }
-        .social-btn.instagram:hover i { text-shadow: 0 0 15px rgba(221, 42, 123, 0.8); }
 
-        /* X (TWITTER) - SVG SVG FIX */
+        .social-btn.instagram:hover i {
+            text-shadow: 0 0 15px rgba(221, 42, 123, 0.8);
+        }
+
         .social-btn.twitter:hover {
             border-color: #ffffff;
             background: #000000;
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
         }
+
         .social-btn.twitter:hover svg {
-            filter: drop-shadow(0 0 5px rgba(255,255,255,0.8)); 
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));
         }
 
-        /* --- MEDIA QUERIES --- */
         @media (max-width: 480px) {
             .brand-title { font-size: 1.6rem; }
             .launch-date { font-size: 1.3rem; }
@@ -295,7 +300,6 @@
     <div class="bg-glow"></div>
 
     <div class="container">
-        
         <div class="brand-title">WABBLE NEWS</div>
         <div class="brand-subtitle">(CRYPTO WABBLE)</div>
 
@@ -323,33 +327,27 @@
         <div class="slogan">Markets Move Fast. So Do We.</div>
 
         <div class="social-grid">
-            <!-- YouTube -->
             <a href="https://youtube.com/@cryptowabble?si=CJP1JzByhfkUytPr" target="_blank" class="social-btn youtube">
                 <i class="fab fa-youtube"></i>
             </a>
-            
-            <!-- Telegram -->
+
             <a href="https://t.me/cryptowabble" target="_blank" class="social-btn telegram">
                 <i class="fab fa-telegram-plane"></i>
             </a>
-            
-            <!-- Instagram -->
+
             <a href="https://www.instagram.com/cryptowabble?igsh=cjd3Z3k0YWQweDBi" target="_blank" class="social-btn instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            
-            <!-- X (Twitter) -->
+
             <a href="https://x.com/CryptoWabble?t=zEuteZpIzwh03OEmINLDDQ&s=09" target="_blank" class="social-btn twitter">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" fill="white"/>
                 </svg>
             </a>
         </div>
-
     </div>
 
     <script>
-        // Target Date: December 28, 2025, 15:00 UTC
         const countDownDate = new Date("2025-12-28T15:00:00Z").getTime();
 
         function updateCountdown() {
@@ -361,25 +359,21 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Using Math.max(0, ...) ensures we don't show negative numbers if date passed
             document.getElementById("days").innerText = days < 10 ? "0" + Math.max(0, days) : Math.max(0, days);
             document.getElementById("hours").innerText = hours < 10 ? "0" + Math.max(0, hours) : Math.max(0, hours);
             document.getElementById("minutes").innerText = minutes < 10 ? "0" + Math.max(0, minutes) : Math.max(0, minutes);
             document.getElementById("seconds").innerText = seconds < 10 ? "0" + Math.max(0, seconds) : Math.max(0, seconds);
 
             if (distance < 0) {
-                document.querySelector(".countdown-grid").innerHTML = 
+                document.querySelector(".countdown-grid").innerHTML =
                     "<div style='grid-column: span 4; font-size: 2rem; font-weight: 700; color: #09B1FA;'>WE ARE LIVE</div>";
                 document.querySelector(".slogan").innerText = "The Wait Is Over.";
             }
         }
 
-        // Run immediately on load so there is no delay
         updateCountdown();
-
-        // Then run every second
         setInterval(updateCountdown, 1000);
     </script>
+
 </body>
 </html>
-
